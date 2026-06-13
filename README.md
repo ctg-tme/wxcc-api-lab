@@ -1,6 +1,3 @@
-# Lab Guide for Cisco Live Amsterdam 2026: LTRCCT-2009
+# Integration Ignition: Fuel Custom Experiences in Your Contact Center
 
-Web guide link: https://cl-ltr.ciscolabs.com/b05ee908aa/
-
-PDF guide link: https://cl-ltr.ciscolabs.com/b05ee908aa/pdf/document.pdf
-
+Webex Contact Center API lab guide.

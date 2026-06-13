@@ -1,6 +1,7 @@
 
 import datetime
 import logging
+import re
 from mkdocs.config.defaults import MkDocsConfig
 
 # Set up logging
@@ -14,7 +15,7 @@ def on_config(config: MkDocsConfig) -> MkDocsConfig | None:
 
     # Parse and set in config the lab_id and lab_title from site_name. These variables are used in home.html template override
     site_name_parts = config.site_name.split(":", 1)
-    if len(site_name_parts) == 2:
+    if len(site_name_parts) == 2 and re.match(r"^[A-Z0-9]+-[0-9]+$", site_name_parts[0].strip()):
         lab_id = site_name_parts[0].strip()
         lab_title = site_name_parts[1].strip()
         config.lab_id = lab_id

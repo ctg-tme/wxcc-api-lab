@@ -1,5 +1,5 @@
 ---
-site_name: "LTRCCT-2009: Integration Ignition: Fuel Custom Experiences in Your Contact Center"
+site_name: "Integration Ignition: Fuel Custom Experiences in Your Contact Center"
 #site_description: {site_name} # This parameter will be auto-set to site_name, unless explicitly defined. Used for HTML meta tags
 site_author: "Barry McLellan, Luis Garcia Delgado"
 copyright: Copyright &copy; {year} Cisco # This parameter will auto-update the year in HTML pages based on the build date
@@ -46,7 +46,7 @@ plugins:
   - awesome-nav
   - to-pdf:
       cover_subtitle: "Instructor-Led Labs"
-      cover_logo: template_assets/PDF_Event_General_Logo.svg
+      cover_logo: template_assets/cisco_logo.png
       ordered_chapter_level: 1
       copyright: Copyright &copy; Cisco 
       enabled: !ENV [ENABLE_PDF_EXPORT, false]  # Set to true or comment this line with # to enable lab guide export to PDF file

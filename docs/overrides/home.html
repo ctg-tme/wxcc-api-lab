@@ -6,7 +6,12 @@
 <style>
     .md-container {
         height: 100%;
-        background: var(--md-primary-fg-color)
+        background:
+            linear-gradient(90deg, rgba(1, 17, 41, 0.92), rgba(1, 17, 41, 0.78)),
+            url("template_assets/wx1Background.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .md-main {
@@ -22,13 +27,11 @@
 
     .tx-container {
         padding-top: .0rem;
-        background: var(--md-primary-fg-color)
+        background: transparent;
     }
 
     .tx-hero {
-        margin: 32px 2.8rem;
-        margin-top: 10rem;
-        margin-right: 5rem;
+        margin: 8rem 2.8rem 4rem;
         color: var(--md-primary-bg-color);
         justify-content: center;
     }
@@ -52,13 +55,28 @@
 
     .tx-hero__logo {
         scale: 1;
-        width: 100%;
-        padding-bottom: 50px;
+        max-width: 160px;
+        padding-bottom: 32px;
     }
 
     .tx-hero__image {
-        width: 1000px;
-        padding-right: 2.5rem;
+        display: none;
+    }
+
+    .tx-hero__kicker {
+        color: var(--md-accent-fg-color);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        margin-bottom: 0.6rem;
+        text-transform: uppercase;
+    }
+
+    .tx-hero__summary {
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 1rem;
     }
 
     .tx-hero .md-button {
@@ -145,7 +163,7 @@
         }
 
         .tx-hero__content {
-            max-width: 22rem;
+            max-width: 30rem;
             margin-top: 3.5rem;
             margin-bottom: 3.5rem;
             margin-left: 1.0rem;
@@ -239,13 +257,11 @@
 <section class="tx-container">
     <div class="md-grid md-typeset">
         <div class="tx-hero">
-            <div class="tx-hero__image">
-                <img src="template_assets/HomePage_Event_logo.png" draggable="false">
-            </div>
             <div class="tx-hero__content">
                 <div class="tx-hero__logo">
-                    <img src="template_assets/Event_General_Logo.png" draggable="false">
+                    <img src="template_assets/cisco_logo.png" alt="Cisco" draggable="false">
                 </div>
+                <div class="tx-hero__kicker">Webex Contact Center API Lab</div>
                 <h1>
                     {% set lab_id = config.lab_id %}
                     {% set lab_title = config.lab_title %}
@@ -258,6 +274,9 @@
                     {% endif %}
                     {{ lab_title }}
                 </h1>
+                <p class="tx-hero__summary">
+                    Build hands-on integrations that connect Webex Contact Center APIs, Webex Connect, AI Agent workflows, and event-driven automation.
+                </p>
                 <a href="getting_started/" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
                     Get started
                 </a>
