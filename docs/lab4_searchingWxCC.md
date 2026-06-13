@@ -176,7 +176,7 @@ Before adding the Search method, you need to create the **WxCC Integration** cus
 
     3. In the **Create new custom node** dialog, configure the following:
 
-        - **Node Icon** — drag `wxcc_custom.svg` into the **Upload Node Icon (SVG)** box or cilck the box and locate your svg image.
+        - **Node Icon** — drag `wxcc_custom.svg` into the **Upload Node Icon (SVG)** box or click the box and locate your SVG image.
         - **Node Name** — `WxCC Integration`
         - **Description** — `WxCC REST API Integration`
         - **Node Category** — click Custom Category and type `WxCC` and select **Create custom category: WxCC** when it appears

@@ -1,0 +1,18 @@
+INHERIT: mkdocs.yml
+
+plugins:
+  - search
+  - awesome-nav
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: fade
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      skip_classes:
+        - custom-skip-class-name
+      auto_caption: true
+      caption_position: top
