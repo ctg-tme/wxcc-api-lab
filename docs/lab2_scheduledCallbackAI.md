@@ -57,7 +57,7 @@ In this first step, you will create the OAuth identity that allows Webex Connect
         - **Integration Name:** <copy>`Connect-WxCC Integration`</copy>
         - **Icon:** Pick any icon.
         - **App Hub Description:** <copy>`Allows Webex Connect to invoke WxCC Callback APIs.`</copy>
-        - **Redirect URI(s)** (replace `{your-connect-domain}` with the Webex Connect domain assigned to your POD): <copy>`https://{your-connect-domain}/callback`</copy>
+        - **Redirect URI(s):** <copy>`https://ltrcct2009pod{XX}.us.webexconnect.io/callback`</copy>
         - **Scopes:** Check the following four scopes:
             ```
             cjp:config

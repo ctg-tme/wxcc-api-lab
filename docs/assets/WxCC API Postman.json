@@ -112,7 +112,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"name\": \"badExperience\",\n    \"description\": \"Bad Experience Detector\",\n    \"defaultCode\": false,\n    \"active\": true,\n    \"workTypeId\": \"{{workTypeId}}\",\n    \"workTypeCode\": \"WRAP_UP_CODE\"\n}",
+          "raw": "{\n    \"name\": \"badExperience\",\n    \"description\": \"API Lab Recovery Test\",\n    \"defaultCode\": false,\n    \"active\": true,\n    \"workTypeId\": \"{{workTypeId}}\",\n    \"workTypeCode\": \"WRAP_UP_CODE\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -884,7 +884,7 @@
         },
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"datacontenttype\": \"application/json\",\n    \"identitytype\": \"phone\",\n    \"identity\": \"+18505598991\",\n    \"specversion\": \"1.0\",\n    \"id\": \"{{$guid}}\",\n    \"source\": \"taskDetails\",\n    \"type\": \"BadExperience\",\n    \"data\": {\n        \"badExperienceCount\": \"1.0\",\n        \"callbackAttempted\": \"0.0\",\n        \"Experience\": \"One prior bad experience\",\n        \"churnRisk\": \"Moderate churn risk (65% retention)\",\n        \"iconName\": \"survey-neutral\",\n        \"surveyPain\": \"\",\n        \"sentimentPain\": \"\",\n        \"wrapCodePain\": \"Agent disposition: Complaint\",\n        \"behavioralPain\": \"Escalations: 2, Hold abandon (agent hold)\",\n        \"uiData\": {\n            \"title\": \"Bad Experience Detector\",\n            \"iconType\": \"survey-neutral\",\n            \"subTitle\": \"One prior bad experience\"\n        }\n    }\n}",
+          "raw": "{\n    \"datacontenttype\": \"application/json\",\n    \"identitytype\": \"phone\",\n    \"identity\": \"+18505598991\",\n    \"specversion\": \"1.0\",\n    \"id\": \"{{$guid}}\",\n    \"source\": \"taskDetails\",\n    \"type\": \"BadExperience\",\n    \"data\": {\n        \"badExperienceCount\": \"1.0\",\n        \"callbackAttempted\": \"0.0\",\n        \"Experience\": \"One prior bad experience\",\n        \"churnRisk\": \"Moderate churn risk (65% retention)\",\n        \"iconName\": \"survey-neutral\",\n        \"surveyPain\": \"\",\n        \"sentimentPain\": \"\",\n        \"wrapCodePain\": \"Agent disposition: Complaint\",\n        \"behavioralPain\": \"Escalations: 2, Hold abandon (agent hold)\",\n        \"uiData\": {\n            \"title\": \"Bad Experience Recovery\",\n            \"iconType\": \"survey-neutral\",\n            \"subTitle\": \"One prior bad experience\"\n        }\n    }\n}",
           "options": {
             "raw": {
               "language": "json"

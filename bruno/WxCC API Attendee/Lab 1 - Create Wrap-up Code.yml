@@ -14,7 +14,7 @@ http:
     data: |-
       {
           "name": "badExperience",
-          "description": "Bad Experience Detector",
+          "description": "API Lab Recovery Test",
           "defaultCode": false,
           "active": true,
           "workTypeId": "{{workTypeId}}",
