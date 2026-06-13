@@ -32,7 +32,7 @@ http:
               "wrapCodePain": "Agent disposition: Complaint",
               "behavioralPain": "Escalations: 2, Hold abandon (agent hold)",
               "uiData": {
-                  "title": "Bad Experience Detector",
+                  "title": "Bad Experience Recovery",
                   "iconType": "survey-neutral",
                   "subTitle": "One prior bad experience"
               }

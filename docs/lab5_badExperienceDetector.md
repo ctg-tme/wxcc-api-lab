@@ -1,15 +1,18 @@
-# Lab 5 - Proactive Outbound Reach 📞
+# Bonus Lab 5 - Proactive Outbound Reach 📞
 
 ## Lab Purpose
 
+!!! info "Optional Bonus Lab"
+    This lab is optional bonus material. The required three-hour-and-a-half workshop path is complete after Lab 3; continue here only if time allows or if you want to explore the full proactive outbound recovery workflow.
+
 When a customer has a bad experience — whether from excessive hold time, poor sentiment, an unresolved issue, or a low survey score — waiting for them to call back is not an option. Every minute of delay increases churn risk. **Proactive outbound communication** is how modern contact centers close that loop before the customer walks away.
 
-In this lab, you will configure an **end-to-end outbound IVR campaign** using **Webex Contact Center Campaign Manager**. Rather than manually uploading contact lists, this lab is designed to support **API-driven contact injection** — where the Bad Experience detection system automatically inserts a customer record into an active campaign the moment a bad experience is detected, triggering a proactive callback at scale, in real time, and 
+In this bonus lab, you will configure an **end-to-end outbound IVR campaign** using **Webex Contact Center Campaign Manager**. Rather than manually uploading contact lists, this lab is designed to support **API-driven contact injection** — where the Bad Experience detection system automatically inserts a customer record into an active campaign the moment a bad experience is detected, triggering a proactive callback at scale, in real time, and 
 in full compliance with regulatory requirements.
 
 You will build the complete WxCC infrastructure required to support this — teams, queues, flows, and entry points — and then configure all Campaign Manager prerequisites before launching a live Progressive IVR campaign to validate the end-to-end flow.
 
-???+ purpose "Lab Objectives"
+???+ purpose "Bonus Lab Objectives"
     - **WxCC Infrastructure Setup:** Configure teams, outdial queues, global variables, 
       and entry points on Control Hub.
     - **Flow Design:** Build an outbound campaign flow with CPA-based routing and event 
@@ -23,7 +26,7 @@ You will build the complete WxCC infrastructure required to support this — tea
     - **Campaign Activation:** Create a campaign group, configure and activate the campaign, 
       and trigger a live call via API-injected contact.
 
-???+ Challenge "Lab Outcome"
+???+ Challenge "Bonus Lab Outcome"
     1. **Receives customer records** injected via the Campaign Manager REST API, triggered 
        by a Bad Experience detection event.
     2. **Dials contacts** using Progressive IVR mode.
@@ -40,7 +43,7 @@ You will build the complete WxCC infrastructure required to support this — tea
 
 ## Pre-requisites
 
-In order to complete this lab, you must have:
+In order to complete this bonus lab, you must have:
 
 * [x] Access to **Webex Control Hub** with Full Admin permissions
 * [x] A **Webex Contact Center** tenant provisioned and licensed
@@ -70,7 +73,7 @@ detection to API-driven contact injection and live outbound call</figcaption>
     simulate that API call manually** using a REST client, so you understand exactly what 
     the system does under the hood.
 
-In this lab you will perform the following tasks:
+In this bonus lab you will perform the following tasks:
 
 1. Configure a team
 2. Create an Outdial Queue

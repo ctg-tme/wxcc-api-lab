@@ -142,7 +142,7 @@ Creating a Wrap-up Code requires a `workTypeId`, which references the **Work Typ
         ```json
         {
             "name": "badExperience",
-            "description": "Bad Experience Detector",
+            "description": "API Lab Recovery Test",
             "defaultCode": false,
             "active": true,
             "workTypeId": "{{workTypeId}}",
