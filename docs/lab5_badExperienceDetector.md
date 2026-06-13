@@ -320,7 +320,7 @@ The Outdial ANI is the caller ID displayed to customers when they receive the ou
 ???+ webex "Configure Outdial ANI"
 
     !!! important "Sandbox — Outdial ANI Already Provisioned"
-        In this sandbox environment, the Outdial ANI has already been created for you. Navigate to **Contact Center** → **Outdial ANI** and locate your pre-provisioned ANI. Note the contact number — you will need to know it when configuring the Campaign dialler in Lab 5.xx.
+        In this sandbox environment, the Outdial ANI has already been created for you. Navigate to **Contact Center** → **Outdial ANI** and locate your pre-provisioned ANI. Note the contact number — you will need to know it when configuring the Campaign dialler in Lab 5.6.
 
     If you are running this lab outside of the sandbox environment, click **Create** and configure the following:
 
@@ -957,7 +957,7 @@ Before making any API calls, it is important to understand the three-step proces
 3. **Inject the contact** — add the customer record to the active contact list. The dialler picks it up within seconds and places the outbound call.
 
 <figure markdown>
-![Bruno API flow overview](./assets/lab1_13_img1.png)
+![Bruno API flow overview](./assets/lab1_p13_img1.png)
 <figcaption>Three-step API flow: check for active list → create if required → inject contact</figcaption>
 </figure>
 
@@ -968,15 +968,15 @@ Before running the API calls, set up a Bruno environment with your campaign vari
 ???+ webex "Set Up Bruno Environment"
 
     !!! important "Collection should already be created"
-        In your Bruno import, the collection should already exist. Click on the Ellipsis menu ...
+        In your Bruno import, the collection should already exist. Click the ellipsis menu for the collection.
 
     1. Open Bruno and create a new collection named `Campaign Manager`.
     2. Create a new environment named `Bootcamp` with the following variables:
 
         | Variable | Value |
         |---|---|
-        | `baseUrl` | `[PLACEHOLDER - Campaign Manager base URL]` |
-        | `campaignId` | `[PLACEHOLDER - your Bad Experience campaign ID]` |
+        | `baseUrl` | Campaign Manager base URL provided for your POD |
+        | `campaignId` | Your `BadExperience_Campaign` campaign ID |
         | `contactListId` | *(leave blank — populated after Step 2)* |
 
     !!! tip
@@ -1009,7 +1009,7 @@ First, query the campaign to determine whether an active API-sourced contact lis
 
     <figure markdown>
     ![GET active contact list response](./assets/lab5_p9_img2.png)
-    <figcaption>[PLACEHOLDER - Screenshot of Bruno GET response showing empty array or active contact list]</figcaption>
+    <figcaption>Bruno GET response showing the active contact list lookup result</figcaption>
     </figure>
 
 ### Step 2 — Create a Contact List
@@ -1043,7 +1043,7 @@ If no active contact list was returned in Step 1, create a new one against the c
 
     <figure markdown>
     ![POST create contact list response](./assets/lab5_p9_img3.png)
-    <figcaption>[PLACEHOLDER - Screenshot of Bruno POST response showing the newly created contact list with its ID]</figcaption>
+    <figcaption>Bruno POST response showing a newly created contact list and ID</figcaption>
     </figure>
 
 ### Step 3 — Inject the Contact
@@ -1216,7 +1216,7 @@ This method creates a new contact list against the campaign when no active list 
 
     <figure markdown>
     ![Create Contact List method configuration](./assets/lab5_p10_img4.png)
-    <figcaption>[PLACEHOLDER - Screenshot of Create Contact List method with URL and body configured]</figcaption>
+    <figcaption>Create Contact List method with URL and body configured</figcaption>
     </figure>
 
 ### Method 3 — Add Contact to Contact List
