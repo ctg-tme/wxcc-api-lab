@@ -1,0 +1,18 @@
+info:
+  name: Scheduled Callbacks - Get by id
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/callbacks/organization/{{org_id}}/scheduled-callback/{{callbackId}}"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

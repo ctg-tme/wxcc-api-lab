@@ -1,0 +1,30 @@
+info:
+  name: Scheduled Callback - Create Callback
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/callbacks/organization/{{org_id}}/scheduled-callback"
+  body:
+    type: json
+    data: |-
+      {
+          "customerName": "Jane Smith",
+          "callbackNumber": "{{callbackNumber}}",
+          "timezone": "America/Los_Angeles",
+          "scheduleDate": "REPLACE_WITH_YYYY_MM_DD",
+          "startTime": "15:30:00",
+          "endTime": "16:00:00",
+          "queueId": "{{queueId}}",
+          "callbackReason": "We noticed your recent experience did not go as expected. We want to make this right — what can we do for you?",
+          "sourceInteraction": "{{transId}}",
+          "assigneeAgent": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

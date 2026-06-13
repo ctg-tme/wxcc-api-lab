@@ -1,0 +1,18 @@
+info:
+  name: Campaign - Management - Update Contact List to mark status as closed
+  type: http
+  seq: 17
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/v3/campaign-management/campaigns/{{campaignId}}/contact-list/{{contactListId}}/contacts/{{phoneNumber}}"
+  body:
+    type: json
+    data: '{ "contactStatus": "CLOSED" }'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

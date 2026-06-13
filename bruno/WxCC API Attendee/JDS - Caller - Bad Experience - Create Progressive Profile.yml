@@ -1,0 +1,158 @@
+info:
+  name: JDS - Caller - Bad Experience - Create Progressive Profile
+  type: http
+  seq: 20
+
+http:
+  method: POST
+  url: "{{baseUrl}}/admin/v1/api/profile-view-template/workspace-id/{{workspaceId}}"
+  body:
+    type: json
+    data: |-
+      {
+          "name": "bad-experience-profile",
+          "attributes": [
+              {
+                  "displayName": "Bad Experience Count",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "double",
+                  "metaData": "badExperienceCount",
+                  "limit": 90,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 30,
+                  "aggregationMode": "Sum",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              },
+              {
+                  "displayName": "Callback Attempted",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "double",
+                  "metaData": "callbackAttempted",
+                  "limit": 90,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 30,
+                  "aggregationMode": "Sum",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              },
+              {
+                  "displayName": "Experience",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "string",
+                  "metaData": "Experience",
+                  "limit": 1,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 30,
+                  "aggregationMode": "Value",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              },
+              {
+                  "displayName": "Churn Risk",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "string",
+                  "metaData": "churnRisk",
+                  "limit": 1,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 90,
+                  "aggregationMode": "Value",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              },
+              {
+                  "displayName": "Icon",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "string",
+                  "metaData": "iconName",
+                  "limit": 1,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 30,
+                  "aggregationMode": "Value",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              },
+              {
+                  "displayName": "Survey Pain",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "string",
+                  "metaData": "surveyPain",
+                  "limit": 1,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 30,
+                  "aggregationMode": "Value",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              },
+              {
+                  "displayName": "Sentiment Pain",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "string",
+                  "metaData": "sentimentPain",
+                  "limit": 1,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 30,
+                  "aggregationMode": "Value",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              },
+              {
+                  "displayName": "Agent Declared Pain",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "string",
+                  "metaData": "wrapCodePain",
+                  "limit": 1,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 30,
+                  "aggregationMode": "Value",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              },
+              {
+                  "displayName": "Behavioral Pain",
+                  "version": "1.0",
+                  "event": "BadExperience",
+                  "metaDataType": "string",
+                  "metaData": "behavioralPain",
+                  "limit": 1,
+                  "lookBackDurationType": "minutes",
+                  "lookBackPeriod": 30,
+                  "aggregationMode": "Value",
+                  "verbose": true,
+                  "widgetAttributes": {
+                      "type": "table"
+                  }
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

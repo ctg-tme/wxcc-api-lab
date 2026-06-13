@@ -1,0 +1,21 @@
+info:
+  name: WxCC - Event Get Subscription by ID
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v2/subscriptions/{{subscriptionId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

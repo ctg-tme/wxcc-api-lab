@@ -1,0 +1,95 @@
+opencollection: 1.0.0
+
+info:
+  name: WxCC API
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  auth:
+    type: oauth2
+    flow: authorization_code
+    authorizationUrl: https://webexapis.com/v1/authorize
+    accessTokenUrl: https://webexapis.com/v1/access_token
+    refreshTokenUrl: https://webexapis.com/v1/access_token
+    callbackUrl: https://oauth.usebruno.com/callback
+    credentials:
+      clientId: "{{client_id}}"
+      clientSecret: "{{client_secret}}"
+      placement: body
+    scope: cjp:config cjp:config_read cjp:config_write cjp:user cjds:admin_org_read cjds:admin_org_write
+    state: new
+    pkce:
+      disabled: true
+    tokenConfig:
+      id: access_token
+      placement:
+        header: Bearer
+      source: access_token
+    settings:
+      autoFetchToken: true
+      autoRefreshToken: false
+  variables:
+    - name: client_id
+      value: REPLACE_WITH_CLIENT_ID
+    - name: client_secret
+      value: REPLACE_WITH_CLIENT_SECRET
+    - name: org_id
+      value: REPLACE_WITH_ORG_ID
+    - name: workspaceId
+      value: REPLACE_WITH_WORKSPACE_ID
+    - name: baseUrl
+      value: https://api.wxcc-us1.cisco.com
+    - name: campaignId
+      value: REPLACE_WITH_CAMPAIGN_ID
+    - name: contactListId
+      value: REPLACE_WITH_CONTACT_LIST_ID
+    - name: subscriptionId
+      value: REPLACE_WITH_SUBSCRIPTION_ID
+    - name: webexConnectWebhookUrl
+      value: REPLACE_WITH_WEBEX_CONNECT_WEBHOOK_URL
+    - name: callbackNumber
+      value: REPLACE_WITH_CALLBACK_NUMBER
+    - name: queueId
+      value: REPLACE_WITH_QUEUE_1_ID
+    - name: callbackId
+      value: REPLACE_WITH_CALLBACK_ID
+    - name: fromDate
+      value: REPLACE_WITH_EPOCH_MINUS_24H
+    - name: toDate
+      value: REPLACE_WITH_EPOCH_NOW
+    - name: transId
+      value: REPLACE_WITH_INTERACTION_ID
+    - name: phoneNumber
+      value: REPLACE_WITH_E164_PHONE_NUMBER
+    - name: phoneNumberPlain
+      value: REPLACE_WITH_PHONE_NUMBER_WITHOUT_PLUS
+    - name: customerFirstName
+      value: REPLACE_WITH_CUSTOMER_FIRST_NAME
+    - name: customerLastName
+      value: REPLACE_WITH_CUSTOMER_LAST_NAME
+    - name: customerEmail
+      value: REPLACE_WITH_CUSTOMER_EMAIL
+    - name: customerId
+      value: REPLACE_WITH_CUSTOMER_ID
+    - name: personId
+      value: REPLACE_WITH_JDS_PERSON_ID
+    - name: profileTemplateId
+      value: REPLACE_WITH_PROFILE_TEMPLATE_ID
+    - name: workTypeId
+      value: REPLACE_WITH_WRAP_UP_WORK_TYPE_ID
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

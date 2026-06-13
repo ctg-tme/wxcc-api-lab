@@ -1,0 +1,25 @@
+info:
+  name: Campaign Contact-List Active By API
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v3/campaign-management/campaigns/{{campaignId}}/contact-lists?status=Active&source=API"
+  params:
+    - name: status
+      value: Active
+      type: query
+    - name: source
+      value: API
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
