@@ -1,0 +1,35 @@
+info:
+  name: WxCC - Event Subscribe
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v2/subscriptions"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "task:ended",
+          "eventTypes": [
+              "task:ended"
+          ],
+          "destinationUrl": "{{webexConnectWebhookUrl}}",
+          "orgId": "{{org_id}}",
+          "resourceVersion": "task:1.0.0"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: ""
+      value: "{{org_id}}"
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

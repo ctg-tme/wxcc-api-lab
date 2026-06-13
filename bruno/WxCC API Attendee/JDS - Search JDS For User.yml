@@ -1,0 +1,21 @@
+info:
+  name: JDS - Search JDS For User
+  type: http
+  seq: 19
+
+http:
+  method: POST
+  url: "{{baseUrl}}/admin/v1/api/person/workspace-id/{{workspaceId}}/aliases/search"
+  body:
+    type: json
+    data: |-
+      {
+          "identities": ["{{phoneNumberPlain}}"]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,989 @@
+{
+  "info": {
+    "name": "WxCC API",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Entry Points",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/organization/{{org_id}}/v2/entry-point",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "organization",
+            "{{org_id}}",
+            "v2",
+            "entry-point"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "List Work Types",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/organization/{{org_id}}/work-type",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "organization",
+            "{{org_id}}",
+            "work-type"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Create Wrap-up Code",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/organization/{{org_id}}/auxiliary-code",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "organization",
+            "{{org_id}}",
+            "auxiliary-code"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"badExperience\",\n    \"description\": \"Bad Experience Detector\",\n    \"defaultCode\": false,\n    \"active\": true,\n    \"workTypeId\": \"{{workTypeId}}\",\n    \"workTypeCode\": \"WRAP_UP_CODE\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Generated Summaries - Search",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/generated-summaries/search",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "generated-summaries",
+            "search"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"interactionId\": \"{{transId}}\",\n    \"orgId\": \"{{org_id}}\",\n    \"searchType\": \"INTERACTION\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Scheduled Callback - Create Callback",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v1/callbacks/organization/{{org_id}}/scheduled-callback",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v1",
+            "callbacks",
+            "organization",
+            "{{org_id}}",
+            "scheduled-callback"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"customerName\": \"Jane Smith\",\n    \"callbackNumber\": \"{{callbackNumber}}\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"scheduleDate\": \"REPLACE_WITH_YYYY_MM_DD\",\n    \"startTime\": \"15:30:00\",\n    \"endTime\": \"16:00:00\",\n    \"queueId\": \"{{queueId}}\",\n    \"callbackReason\": \"We noticed your recent experience did not go as expected. We want to make this right — what can we do for you?\",\n    \"sourceInteraction\": \"{{transId}}\",\n    \"assigneeAgent\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Scheduled Callbacks - Get Callback Number",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v1/callbacks/organization/{{org_id}}/scheduled-callback?callbackNumber={{callbackNumber}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v1",
+            "callbacks",
+            "organization",
+            "{{org_id}}",
+            "scheduled-callback?callbackNumber={{callbackNumber}}"
+          ],
+          "query": [
+            {
+              "key": "callbackNumber",
+              "value": "{{callbackNumber}}"
+            }
+          ],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Scheduled Callbacks - Get by id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v1/callbacks/organization/{{org_id}}/scheduled-callback/{{callbackId}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v1",
+            "callbacks",
+            "organization",
+            "{{org_id}}",
+            "scheduled-callback",
+            "{{callbackId}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Campaign Contact-List Active By API",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v3/campaign-management/campaigns/{{campaignId}}/contact-lists?status=Active&source=API",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v3",
+            "campaign-management",
+            "campaigns",
+            "{{campaignId}}",
+            "contact-lists?status=Active&source=API"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "Active"
+            },
+            {
+              "key": "source",
+              "value": "API"
+            }
+          ],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "WxCC - Event List Types",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v2/event-types",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v2",
+            "event-types"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "WxCC - Event Subscribe",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v2/subscriptions",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v2",
+            "subscriptions"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"task:ended\",\n    \"eventTypes\": [\n        \"task:ended\"\n    ],\n    \"destinationUrl\": \"{{webexConnectWebhookUrl}}\",\n    \"orgId\": \"{{org_id}}\",\n    \"resourceVersion\": \"task:1.0.0\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "WxCC - Event List Subscriptions",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v2/subscriptions",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v2",
+            "subscriptions"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "WxCC - Event Get Subscription by ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v2/subscriptions/{{subscriptionId}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v2",
+            "subscriptions",
+            "{{subscriptionId}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "WxCC - Event Delete Subscription",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v2/subscriptions/{{subscriptionId}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v2",
+            "subscriptions",
+            "{{subscriptionId}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Search Task Details",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/search?orgId={{org_id}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "search?orgId={{org_id}}"
+          ],
+          "query": [
+            {
+              "key": "orgId",
+              "value": "{{org_id}}"
+            }
+          ],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"query TaskDetails($fromDate: Long!, $toDate: Long!, $transId: String!, $globalFeedbackSurveyVariableName: String!) { taskDetails( from: $fromDate, to: $toDate, timeComparator: createdTime, filter: { and: [ { id: { equals: $transId } } ] }, pagination: {} ) { tasks { abandonedType agentToAgentTransferCount autoCsat blindTransferCount conferenceCount connectedDuration consultToQueueCount csatScore GV_SurveyResponse: stringGlobalVariables(name: $globalFeedbackSurveyVariableName) { name value } holdDuration id isContactEscalatedToQueue lastQueue { name id } lastWrapupCodeName overflowCount owner { name id } sentiment terminatingEnd terminationType totalDuration } pageInfo { endCursor hasNextPage } intervalInfo { interval timezone } } }\",\n  \"variables\": {\n    \"fromDate\": \"{{fromDate}}\",\n    \"toDate\": \"{{toDate}}\",\n    \"transId\": \"{{transId}}\",\n    \"globalFeedbackSurveyVariableName\": \"SurveyResult\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Campaign - Management - Create Contact List",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v3/campaign-management/campaigns/{{campaignId}}/contact-list",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v3",
+            "campaign-management",
+            "campaigns",
+            "{{campaignId}}",
+            "contact-list"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"supportedChannels\": [ \"Voice\"],\n    \"activationTimeLagMinutes\": 0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Campaign - Management - Add Contact To Contact List",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v3/campaign-management/campaigns/{{campaignId}}/contact-list/{{contactListId}}/contacts",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v3",
+            "campaign-management",
+            "campaigns",
+            "{{campaignId}}",
+            "contact-list",
+            "{{contactListId}}",
+            "contacts"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contacts\": [\n    {\n      \"contactAttributes\": [\n        {\"fieldName\": \"firstName\", \"value\": \"John\"},\n        {\"fieldName\": \"lastName\", \"value\": \"Smith\"},\n        {\"fieldName\": \"phoneNumber\", \"value\": \"{{phoneNumber}}\"},\n        {\"fieldName\": \"Reason\", \"value\": \"We noticed your recent experience did not go as expected\"},\n        {\"fieldName\": \"Status\", \"value\": \"Frustrated\"},\n        {\"fieldName\": \"ID\", \"value\": \"e64a72db-a97c-4fdb-9edc-5299883dbc0f\"},\n        {\"fieldName\": \"Comments\", \"value\": \"Customer waited over 5 minutes and disconnected\"}\n      ]\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Campaign - Management - Update Contact List to mark status as closed",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v3/campaign-management/campaigns/{{campaignId}}/contact-list/{{contactListId}}/contacts/{{phoneNumber}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v3",
+            "campaign-management",
+            "campaigns",
+            "{{campaignId}}",
+            "contact-list",
+            "{{contactListId}}",
+            "contacts",
+            "{{phoneNumber}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"contactStatus\": \"CLOSED\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "JDS - Create Identity",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/admin/v1/api/person/workspace-id/{{workspaceId}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "v1",
+            "api",
+            "person",
+            "workspace-id",
+            "{{workspaceId}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Barry\",\n  \"lastName\": \"McLellan\",\n  \"phone\": [\n    \"+12263762555\",\n    \"12263762555\"\n  ],\n  \"email\": [\n    \"bmclella@cisco.com\"\n  ],\n  \"customerId\": [\n    \"4689557617731186\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "JDS - Search JDS For User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/admin/v1/api/person/workspace-id/{{workspaceId}}/aliases/search",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "v1",
+            "api",
+            "person",
+            "workspace-id",
+            "{{workspaceId}}",
+            "aliases",
+            "search"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"identities\": [\"12146326080\"]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "JDS - Caller - Bad Experience - Create Progressive Profile",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/admin/v1/api/profile-view-template/workspace-id/{{workspaceId}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "v1",
+            "api",
+            "profile-view-template",
+            "workspace-id",
+            "{{workspaceId}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"bad-experience-profile\",\n    \"attributes\": [\n        {\n            \"displayName\": \"Bad Experience Count\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"double\",\n            \"metaData\": \"badExperienceCount\",\n            \"limit\": 90,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 30,\n            \"aggregationMode\": \"Sum\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        },\n        {\n            \"displayName\": \"Callback Attempted\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"double\",\n            \"metaData\": \"callbackAttempted\",\n            \"limit\": 90,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 30,\n            \"aggregationMode\": \"Sum\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        },\n        {\n            \"displayName\": \"Experience\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"string\",\n            \"metaData\": \"Experience\",\n            \"limit\": 1,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 30,\n            \"aggregationMode\": \"Value\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        },\n        {\n            \"displayName\": \"Churn Risk\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"string\",\n            \"metaData\": \"churnRisk\",\n            \"limit\": 1,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 90,\n            \"aggregationMode\": \"Value\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        },\n        {\n            \"displayName\": \"Icon\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"string\",\n            \"metaData\": \"iconName\",\n            \"limit\": 1,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 30,\n            \"aggregationMode\": \"Value\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        },\n        {\n            \"displayName\": \"Survey Pain\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"string\",\n            \"metaData\": \"surveyPain\",\n            \"limit\": 1,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 30,\n            \"aggregationMode\": \"Value\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        },\n        {\n            \"displayName\": \"Sentiment Pain\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"string\",\n            \"metaData\": \"sentimentPain\",\n            \"limit\": 1,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 30,\n            \"aggregationMode\": \"Value\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        },\n        {\n            \"displayName\": \"Agent Declared Pain\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"string\",\n            \"metaData\": \"wrapCodePain\",\n            \"limit\": 1,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 30,\n            \"aggregationMode\": \"Value\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        },\n        {\n            \"displayName\": \"Behavioral Pain\",\n            \"version\": \"1.0\",\n            \"event\": \"BadExperience\",\n            \"metaDataType\": \"string\",\n            \"metaData\": \"behavioralPain\",\n            \"limit\": 1,\n            \"lookBackDurationType\": \"minutes\",\n            \"lookBackPeriod\": 30,\n            \"aggregationMode\": \"Value\",\n            \"verbose\": true,\n            \"widgetAttributes\": {\n                \"type\": \"table\"\n            }\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "JDS - Caller - Bad Experience - Get Progressive Template Values",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/v1/api/progressive-profile-view/workspace-id/{{workspaceId}}/person-id/65cc2ba6ed2a7b3b2ee1fba2/template-id/6994b63c659a6d6d6cc430e9",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v1",
+            "api",
+            "progressive-profile-view",
+            "workspace-id",
+            "{{workspaceId}}",
+            "person-id",
+            "65cc2ba6ed2a7b3b2ee1fba2",
+            "template-id",
+            "6994b63c659a6d6d6cc430e9"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "JDS - Caller - Bad Experience - Post Event",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/publish/v1/api/event?workspaceId={{workspaceId}}",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "publish",
+            "v1",
+            "api",
+            "event?workspaceId={{workspaceId}}"
+          ],
+          "query": [
+            {
+              "key": "workspaceId",
+              "value": "{{workspaceId}}"
+            }
+          ],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"datacontenttype\": \"application/json\",\n    \"identitytype\": \"phone\",\n    \"identity\": \"+18505598991\",\n    \"specversion\": \"1.0\",\n    \"id\": \"{{$guid}}\",\n    \"source\": \"taskDetails\",\n    \"type\": \"BadExperience\",\n    \"data\": {\n        \"badExperienceCount\": \"1.0\",\n        \"callbackAttempted\": \"0.0\",\n        \"Experience\": \"One prior bad experience\",\n        \"churnRisk\": \"Moderate churn risk (65% retention)\",\n        \"iconName\": \"survey-neutral\",\n        \"surveyPain\": \"\",\n        \"sentimentPain\": \"\",\n        \"wrapCodePain\": \"Agent disposition: Complaint\",\n        \"behavioralPain\": \"Escalations: 2, Hold abandon (agent hold)\",\n        \"uiData\": {\n            \"title\": \"Bad Experience Detector\",\n            \"iconType\": \"survey-neutral\",\n            \"subTitle\": \"One prior bad experience\"\n        }\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "client_id",
+      "value": "C8781e97a83f29d17a86f9b4eb7d9a612e8fa8e4cadf3e828ad6dedc788ab192a",
+      "type": "default"
+    },
+    {
+      "key": "client_secret",
+      "value": "9a4b86d70be97723658171ae353add6e036208a1474d27986a5d1d084c55a582",
+      "type": "default"
+    },
+    {
+      "key": "org_id",
+      "value": "d8181bb6-b5a8-4a5a-990d-4bdc67eae571",
+      "type": "default"
+    },
+    {
+      "key": "workspaceId",
+      "value": "REPLACE_WITH_WORKSPACE_ID",
+      "type": "default"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.wxcc-us1.cisco.com",
+      "type": "default"
+    },
+    {
+      "key": "campaignId",
+      "value": "REPLACE_WITH_CAMPAIGN_ID",
+      "type": "default"
+    },
+    {
+      "key": "contactListId",
+      "value": "REPLACE_WITH_CONTACT_LIST_ID",
+      "type": "default"
+    },
+    {
+      "key": "subscriptionId",
+      "value": "REPLACE_WITH_SUBSCRIPTION_ID",
+      "type": "default"
+    },
+    {
+      "key": "webexConnectWebhookUrl",
+      "value": "https://hooks.us.webexconnect.io/events/L9CB5QBY0",
+      "type": "default"
+    },
+    {
+      "key": "callbackNumber",
+      "value": "REPLACE_WITH_CALLBACK_NUMBER",
+      "type": "default"
+    },
+    {
+      "key": "queueId",
+      "value": "REPLACE_WITH_QUEUE_ID",
+      "type": "default"
+    },
+    {
+      "key": "callbackId",
+      "value": "REPLACE_WITH_CALLBACK_ID",
+      "type": "default"
+    },
+    {
+      "key": "fromDate",
+      "value": "REPLACE_WITH_EPOCH_MINUS_24H",
+      "type": "default"
+    },
+    {
+      "key": "toDate",
+      "value": "REPLACE_WITH_EPOCH_NOW",
+      "type": "default"
+    },
+    {
+      "key": "transId",
+      "value": "REPLACE_WITH_INTERACTION_ID",
+      "type": "default"
+    },
+    {
+      "key": "phoneNumber",
+      "value": "REPLACE_WITH_E164_PHONE_NUMBER",
+      "type": "default"
+    },
+    {
+      "key": "workTypeId",
+      "value": "1331555e-6489-4945-915f-32b3c866dce7",
+      "type": "default"
+    },
+    {
+      "key": "$guid",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

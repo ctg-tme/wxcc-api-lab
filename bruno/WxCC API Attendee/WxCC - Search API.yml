@@ -1,0 +1,39 @@
+info:
+  name: Search Task Details
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{baseUrl}}/search?orgId={{org_id}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: orgId
+      value: "{{org_id}}"
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+        "query": "query TaskDetails($fromDate: Long!, $toDate: Long!, $transId: String!, $globalFeedbackSurveyVariableName: String!) { taskDetails( from: $fromDate, to: $toDate, timeComparator: createdTime, filter: { and: [ { id: { equals: $transId } } ] }, pagination: {} ) { tasks { abandonedType agentToAgentTransferCount autoCsat blindTransferCount conferenceCount connectedDuration consultToQueueCount csatScore GV_SurveyResponse: stringGlobalVariables(name: $globalFeedbackSurveyVariableName) { name value } holdDuration id isContactEscalatedToQueue lastQueue { name id } lastWrapupCodeName overflowCount owner { name id } sentiment terminatingEnd terminationType totalDuration } pageInfo { endCursor hasNextPage } intervalInfo { interval timezone } } }",
+        "variables": {
+          "fromDate": "{{fromDate}}",
+          "toDate": "{{toDate}}",
+          "transId": "{{transId}}",
+          "globalFeedbackSurveyVariableName": "SurveyResult"
+        }
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: ""
+      value: "{{org_id}}"
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

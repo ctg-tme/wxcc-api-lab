@@ -1,0 +1,145 @@
+{
+  "bot_type": "virtualagent",
+  "configuration": {
+    "ai_engine": "PRO_US",
+    "default_language": "en-GB",
+    "kb_ids": [],
+    "llm_agent_description": "You are a friendly virtual assistant for Cisco Contact Center. Your mission is to greet inbound callers, identify their intent, and — when they ask to speak to a human — offer to schedule a callback on their behalf since live agents are busy.\n\n### INSTRUCTIONS:\n1. Identity\nRole Definition: You are a friendly virtual assistant for Cisco Contact Center, specializing in greeting callers and offering callback scheduling when human agents are busy.\nTone: Warm, conversational, and efficient — this is a voice channel, so keep replies short.\n\n2. Context\nBackground: You handle inbound PSTN calls. All live agents are currently busy, so when a customer asks for a human you should offer a scheduled callback.\nEnvironment: Voice line. Keep responses clear, concise, and free of long lists or markdown.\n\n3. Tasks:\n\nGreeting: Greet the caller warmly and ask how you can help.\nIntent Detection: Listen for any request to speak with a human, agent, representative, or real person.\nCallback Offer: When such a request is detected, say: \"All our agents are currently helping other customers, but I'd be happy to schedule a callback for you.\"\nSlot Collection: Collect the customer's full name and a valid 10-digit US callback number using natural conversation.\nConfirmation: Read back the collected details and ask the customer to confirm before scheduling.\nFulfillment: Once confirmed, execute [schedule_callback] with the collected slots.\nClosing: Read back the confirmed date and start time returned by the action, then end the call politely.\n\n4. Response Guidelines\nFormatting: Keep responses short and conversational — this is voice, not chat.\nLanguage Style: Use clear, direct language for names, numbers, dates, and times.\n\n5. Error Handling\nClarification: \"I didn't catch that. Could you repeat?\"\nDefault Response: \"I can help schedule a callback if you'd like to speak with an agent.\"\nAction Failures: \"I'm having trouble scheduling that right now — let me transfer you to the next available agent.\"\n\n6. User Defined Guardrails\nStay focused on greeting and callback scheduling.\nDo not attempt to resolve other customer issues yourself.\nNever share or invent personal customer data.",
+    "llm_model": "1.0.0",
+    "logo": "https://studio.aiagent-us1.cisco.com/static/assets/img/bot-logo/default-virtualagent.svg",
+    "timezone": "America/Los_Angeles",
+    "voice_settings": {
+      "advance_settings": {
+        "global": {
+          "delays_and_interruptions": {
+            "caller_turn_timeout": 1500,
+            "custom_no_input": 10,
+            "customer_interruption": true,
+            "eos_sensitivity": 500,
+            "fulfilment_timeout": 30,
+            "optimized_barge_in": true,
+            "slots_additional_delay": 800
+          },
+          "dtmf_settings": {
+            "max_length": 16,
+            "term_char": "#",
+            "timeout_between_digits": 5,
+            "turn_on_dtmf": true
+          },
+          "is_customized": true,
+          "response_settings": {
+            "custom_vocabulary": [],
+            "include_disfluencies": false,
+            "response_style": "DIRECT"
+          }
+        }
+      },
+      "voices": [
+        {
+          "displayName": "en-GB-Lillian",
+          "language": "English",
+          "locale": "en-GB",
+          "speaking_rate": 1
+        }
+      ]
+    },
+    "welcome_message": "Thanks for calling Webex Contact Center! How can I help you today?"
+  },
+  "tools": [
+    {
+      "capability": "slot_filling",
+      "description": "Escalate the conversation to a human agent if the user asks for it.",
+      "enabled": true,
+      "fulfillment": {},
+      "id": "3c79b88f06725f5273a9fe28b3f530b6",
+      "name": "Agent handover",
+      "slots": [],
+      "slots_view": "table",
+      "system_tool": true
+    },
+    {
+      "action_type": "fulfilment",
+      "bot_id": 55973,
+      "capability": "slot_filling_with_fulfillment",
+      "description": "You will trigger this action when the user requests a schedule callback.",
+      "enabled": true,
+      "fulfillment": {
+        "authentication": {
+          "service_key": "",
+          "type": "ci_bearer_token"
+        },
+        "code": "",
+        "flow_id": 78994,
+        "flow_name": "schedule_callback",
+        "output_entities": {
+          "parameters": {
+            "properties": {},
+            "required": [],
+            "secure": [],
+            "type": "object"
+          }
+        },
+        "output_entities_format": "table",
+        "output_entities_text": "",
+        "output_entities_view": "table",
+        "service_id": "52341",
+        "service_name": "ProactiveOutreach",
+        "type": "flow",
+        "webhook_url": "https://hooks.us.webexconnect.io/flows/78994/trigger/aiagent"
+      },
+      "id": "99577418eeaadbf6dcc27baba1e8176e",
+      "input_entities": {
+        "parameters": {
+          "properties": {
+            "date": {
+              "description": "User’s preferred date in the given format",
+              "examples": [],
+              "format": "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$",
+              "type": "date"
+            },
+            "end_time": {
+              "description": "it should always be 1 hour after the start_time variable.",
+              "examples": [],
+              "format": "hh:mm:ss",
+              "type": "time"
+            },
+            "mobile_number": {
+              "description": "A valid phone number with country code. Use this phone number {{phone_number}} unless the customer requests a different number.",
+              "examples": [],
+              "pattern": "\\+?\\d{0,3}\\s?\\(?\\d{1,4}\\)?[-\\s]?\\d{1,4}[-\\s]?\\d{1,4}[-\\s]?\\d{1,4}",
+              "type": "phone"
+            },
+            "name": {
+              "description": "Use this customer name {{customer_name}}",
+              "examples": [],
+              "type": "string"
+            },
+            "reason": {
+              "description": "If the user clarifies the reason for the contact, summarize it in this variable.",
+              "examples": [],
+              "type": "string"
+            },
+            "start_time": {
+              "description": "User's preferred time in the given format. Always assume the seconds (ss) are 00.",
+              "examples": [],
+              "format": "hh:mm:ss",
+              "type": "time"
+            }
+          },
+          "required": [
+            "date",
+            "end_time",
+            "mobile_number",
+            "name",
+            "start_time"
+          ],
+          "secure": [],
+          "type": "object"
+        }
+      },
+      "name": "schedule_callback",
+      "slots_view": "table",
+      "system_tool": false
+    }
+  ]
+}

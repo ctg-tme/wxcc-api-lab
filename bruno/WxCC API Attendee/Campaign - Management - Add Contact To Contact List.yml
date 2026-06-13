@@ -1,0 +1,33 @@
+info:
+  name: Campaign - Management - Add Contact To Contact List
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v3/campaign-management/campaigns/{{campaignId}}/contact-list/{{contactListId}}/contacts"
+  body:
+    type: json
+    data: |-
+      {
+        "contacts": [
+          {
+            "contactAttributes": [
+              {"fieldName": "firstName", "value": "John"},
+              {"fieldName": "lastName", "value": "Smith"},
+              {"fieldName": "phoneNumber", "value": "{{phoneNumber}}"},
+              {"fieldName": "Reason", "value": "We noticed your recent experience did not go as expected"},
+              {"fieldName": "Status", "value": "Frustrated"},
+              {"fieldName": "ID", "value": "{{$guid}}"},
+              {"fieldName": "Comments", "value": "Customer waited over 5 minutes and disconnected"}
+            ]
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

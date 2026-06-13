@@ -1,0 +1,32 @@
+info:
+  name: JDS - Create Identity
+  type: http
+  seq: 18
+
+http:
+  method: POST
+  url: "{{baseUrl}}/admin/v1/api/person/workspace-id/{{workspaceId}}"
+  body:
+    type: json
+    data: |-
+      {
+        "firstName": "{{customerFirstName}}",
+        "lastName": "{{customerLastName}}",
+        "phone": [
+          "{{phoneNumber}}",
+          "{{phoneNumberPlain}}"
+        ],
+        "email": [
+          "{{customerEmail}}"
+        ],
+        "customerId": [
+          "{{customerId}}"
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

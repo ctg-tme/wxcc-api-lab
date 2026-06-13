@@ -1,0 +1,29 @@
+info:
+  name: Create Wrap-up Code
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/organization/{{org_id}}/auxiliary-code"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "badExperience",
+          "description": "Bad Experience Detector",
+          "defaultCode": false,
+          "active": true,
+          "workTypeId": "{{workTypeId}}",
+          "workTypeCode": "WRAP_UP_CODE"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

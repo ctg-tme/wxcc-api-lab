@@ -1,0 +1,123 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+@import "admonition.css";
+
+.md-typeset__table {
+    min-width: 100%;
+}
+
+.md-typeset table:not([class]) {
+    display: table;
+}
+
+.md-grid {
+    max-width: 1440px;
+}
+
+:root {
+    --md-primary-fg-color: #011129;
+    --md-accent-fg-color: #00bdeb;
+}
+
+[data-md-color-scheme="default"] {
+    --md-typeset-a-color: #3a7fff;
+    --md-accent-fg-color: #00bdeb;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-typeset-a-color: #3a7fff;
+    --md-accent-fg-color: #00bdeb;
+}
+.max-code-height>pre>code {
+    max-height: 500px; 
+    overflow-y: auto;
+}
+
+.pod-lookup {
+    margin-top: 0.8rem;
+}
+
+.pod-lookup__controls {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pod-lookup__field {
+    display: flex;
+    flex: 0 1 12rem;
+    flex-direction: column;
+}
+
+.pod-lookup__field--button {
+    flex-basis: auto;
+}
+
+.pod-lookup__label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.pod-lookup__input {
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 4px;
+    font: inherit;
+    min-height: 2.25rem;
+    padding: 0.35rem 0.55rem;
+}
+
+.pod-lookup__input--passcode {
+    min-width: 14rem;
+}
+
+.pod-lookup__button {
+    background: var(--md-primary-fg-color);
+    border: 0;
+    border-radius: 4px;
+    color: var(--md-primary-bg-color);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    min-height: 2.25rem;
+    padding: 0.35rem 0.8rem;
+}
+
+.pod-lookup__button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.pod-lookup__button:focus,
+.pod-lookup__button:hover {
+    background: var(--md-accent-fg-color);
+    color: var(--md-default-bg-color);
+}
+
+.pod-lookup__message {
+    color: var(--md-default-fg-color--light);
+    margin: 0.5rem 0;
+}
+
+.pod-lookup__message--error {
+    color: var(--md-typeset-color);
+    font-weight: 700;
+}
+
+.pod-lookup__result {
+    margin-top: 0.75rem;
+    overflow-x: auto;
+}
+
+.pod-lookup__result table {
+    width: 100%;
+}
+
+.pod-lookup__result th {
+    width: 12rem;
+}
+
+.pod-lookup__result code {
+    overflow-wrap: anywhere;
+    white-space: normal;
+}

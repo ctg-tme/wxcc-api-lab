@@ -1,0 +1,26 @@
+info:
+  name: Generated Summaries - Search
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/generated-summaries/search"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "interactionId": "{{transId}}",
+          "orgId": "{{org_id}}",
+          "searchType": "INTERACTION"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

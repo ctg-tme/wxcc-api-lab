@@ -1,0 +1,18 @@
+info:
+  name: List Work Types
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/organization/{{org_id}}/work-type"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,22 @@
+info:
+  name: Scheduled Callbacks - Get Callback Number
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl}}/v1/callbacks/organization/{{org_id}}/scheduled-callback?callbackNumber={{callbackNumber}}"
+  params:
+    - name: callbackNumber
+      value: "{{callbackNumber}}"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

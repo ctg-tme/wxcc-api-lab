@@ -1,0 +1,47 @@
+info:
+  name: JDS - Caller - Bad Experience - Post Event
+  type: http
+  seq: 22
+
+http:
+  method: POST
+  url: "{{baseUrl}}/publish/v1/api/event?workspaceId={{workspaceId}}"
+  params:
+    - name: workspaceId
+      value: "{{workspaceId}}"
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+          "datacontenttype": "application/json",
+          "identitytype": "phone",
+          "identity": "{{phoneNumber}}",
+          "specversion": "1.0",
+          "id": "{{$guid}}",
+          "source": "taskDetails",
+          "type": "BadExperience",
+          "data": {
+              "badExperienceCount": "1.0",
+              "callbackAttempted": "0.0",
+              "Experience": "One prior bad experience",
+              "churnRisk": "Moderate churn risk (65% retention)",
+              "iconName": "survey-neutral",
+              "surveyPain": "",
+              "sentimentPain": "",
+              "wrapCodePain": "Agent disposition: Complaint",
+              "behavioralPain": "Escalations: 2, Hold abandon (agent hold)",
+              "uiData": {
+                  "title": "Bad Experience Detector",
+                  "iconType": "survey-neutral",
+                  "subTitle": "One prior bad experience"
+              }
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
