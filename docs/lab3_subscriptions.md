@@ -612,4 +612,4 @@ In this lab, you have:
 
 This completes the required lab path. If time allows, continue to the optional bonus lab.
 
-[Bonus Lab 5 - Proactive Outbound Reach](./lab5_badExperienceDetector.md){ .md-button .md-button--primary }
+[Bonus Lab 4 - Proactive Outbound Reach](./lab4_badExperienceDetector.md){ .md-button .md-button--primary }
