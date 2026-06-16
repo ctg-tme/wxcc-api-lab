@@ -5,4 +5,4 @@ nav:
             - Lab 1 - Using Bruno and the WxCC HTTP Connector.: lab1_bruno.md
             - Lab 2 - Scheduled Callback using an AI Agent: lab2_scheduledCallbackAI.md
             - Lab 3 - Event Subscriptions and Search API: lab3_subscriptions.md
-            - Bonus Lab 5 - Proactive Outbound Reach: lab5_badExperienceDetector.md
+            - Bonus Lab 4 - Proactive Outbound Reach: lab4_badExperienceDetector.md

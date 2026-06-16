@@ -1,4 +1,4 @@
-# Bonus Lab 5 - Proactive Outbound Reach 📞
+# Bonus Lab 4 - Proactive Outbound Reach 📞
 
 ## Lab Purpose
 
