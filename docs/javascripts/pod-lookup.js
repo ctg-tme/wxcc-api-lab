@@ -3,28 +3,28 @@
     1: {
       podName: "LTRCCT-2009-POD01",
       orgId: "ddd72e87-d0ef-4286-9df6-f9176d359d5e",
-      adminUser: "admin@ltrcct-2009-pod01.wbx.ai",
+      adminUser: "lab-admin@ltrcct-2009-pod01.wbx.ai",
       agentUser: "user1@ltrcct-2009-pod01.wbx.ai",
       campaignManagerUrl: "https://LTRCCT2009POD01.wxcc.webexcampaign.us/nextgen"
     },
     2: {
       podName: "LTRCCT-2009-POD02",
       orgId: "ffadb926-3255-4782-950d-91d3c8b2a135",
-      adminUser: "admin@ltrcct-2009-pod02.wbx.ai",
+      adminUser: "lab-admin@ltrcct-2009-pod02.wbx.ai",
       agentUser: "user1@ltrcct-2009-pod02.wbx.ai",
       campaignManagerUrl: "https://LTRCCT2009POD02.wxcc.webexcampaign.us/nextgen"
     },
     3: {
       podName: "LTRCCT-2009-POD03",
       orgId: "9a49d854-1606-4441-8be4-760661e102dd",
-      adminUser: "admin@ltrcct-2009-pod03.wbx.ai",
+      adminUser: "lab-admin@ltrcct-2009-pod03.wbx.ai",
       agentUser: "user1@ltrcct-2009-pod03.wbx.ai",
       campaignManagerUrl: "https://LTRCCT2009POD03.wxcc.webexcampaign.us/nextgen"
     },
     4: {
       podName: "LTRCCT-2009-POD04",
       orgId: "e5e64a42-9971-43a0-96ff-025f34273e5c",
-      adminUser: "admin@ltrcct-2009-pod04.wbx.ai",
+      adminUser: "lab-admin@ltrcct-2009-pod04.wbx.ai",
       agentUser: "user1@ltrcct-2009-pod04.wbx.ai",
       campaignManagerUrl: "https://LTRCCT2009POD04.wxcc.webexcampaign.us/nextgen"
     },
