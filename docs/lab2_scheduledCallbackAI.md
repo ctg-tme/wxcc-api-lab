@@ -380,7 +380,7 @@ When the AI Agent triggers `schedule_callback`, Webex Connect needs a flow to re
             | Custom Node Input | Mapped Value |
             | :--- | :--- |
             | `name` | <copy>`$(n2.aiAgent.name)`</copy> |
-            | `callback_number` | <copy>`$(n5.phone_Number)`</copy> |
+            | `callback_number` | <copy>`$(phone_Number)`</copy> |
             | `date` | <copy>`$(n2.aiAgent.date)`</copy> |
             | `start_time` | <copy>`$(n2.aiAgent.start_time)`</copy> |
             | `end_time` | <copy>`$(n2.aiAgent.end_time)`</copy> |
