@@ -206,7 +206,7 @@ Webex Connect uses **Custom Nodes** to wrap REST APIs into reusable flow compone
         |---|---|---|---|---|---|
         | `Success` | `HTTP Status` | *(blank)* | `starts with` | `2` | `Success` |
         | `Failure` | `HTTP Status` | *(blank)* | `starts with` | `4` | `Error` |
-        | `Failure` | `HTTP Status` | *(blank)* | `starts with` | `5` | `Error` |
+        | `Unavailable` | `HTTP Status` | *(blank)* | `starts with` | `5` | `Error` |
 
     11. Under **Set data to be returned in a flow session**, add the following response parameter:
 
